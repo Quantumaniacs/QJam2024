@@ -1,5 +1,3 @@
-**Team Name:** Quantumaniacs
-
 **Members:** Angel Contreras (Quantumaniacs), Cesar Mallaupoma (QJam2024), Kevin Durán (QJam2024), Antonia Morales (Quantumaniacs), Miguel Luna (QJam2024), and Carolina Perdomo (Quantumaniacs).
 
 **Game description:**  
