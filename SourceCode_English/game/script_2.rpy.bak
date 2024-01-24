@@ -1,0 +1,163 @@
+﻿# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define Quanta = Character("Quanta", color="#29C101")
+define Q_Bit = Character("Q_Bit", color="#0138C1")
+
+screen superposición():
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.28
+        idle "superposicionA.png"
+        hover "superposicionB.png"
+        action Jump("parte2")
+        
+screen Oráculo():
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.28
+        idle "gaget oraculo.png"
+        hover "gaget oraculo s.png"
+        action Jump("parte3")
+
+screen Difusor():
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.28
+        idle "gaget difusor.png"
+        hover "gaget difusor s.png"
+        action Jump("parte4")
+
+# The game starts here.
+
+label script2_start:
+    "La Ciudad de la Superposición, un lugar donde la realidad se duplica y triplica en un baile de posibilidades..."
+
+    scene bg 2
+    play music "PAX__Una_Aventura_Espacial.mp3"
+    
+    show quanta base at truecenter
+    "Quanta" "Bien, parece que este es el lugar. Q_Bit, activa el Escáner de Superposición."
+
+    hide quanta base
+    show qbit base at right
+    "Q_Bit" "Escaneando... Detectando múltiples caminos, al menos 16 hasta llegar donde esta el profesor. El algoritmo de Grover será esencial aquí Quanta."
+
+    hide qbit base at right with dissolve
+    show quanta bravo at left
+    "Quanta" "¿El algoritmo de Grover?"
+
+    hide quanta bravo at left
+    show qbit base at right
+    "Q_Bit" "Vamos a necesitar una demostración práctica. ¿Preparado para una pequeña lección interactiva?"
+
+    hide qbit base at right
+    show quanta determinado at left
+    "Quanta" "¡Siempre! No tenemos tiempo que perder, no podemos tomar cada camino uno por uno, ¡el profe nos necesita!"
+
+    hide quanta determinado at left
+    show qbit base at right
+    "Q_Bit" "Correcto, Quanta. Primero, ubiquemos todos los caminos en un estado de superposición con nuestro Gadget de Superposición. Seleccionalo, por favor."
+
+    scene white
+    call screen superposición
+
+label parte2:
+    scene bg 2s
+
+    show quanta base at truecenter
+    "Quanta" "Impresionante... "
+
+    hide quanta base at truecenter
+    show qbit base at right
+    "Q_Bit" "Ahora, utilizaremos el Oráculo para marcar el camino correcto. Pero recuerda, su señal es débil al comienzo debido a la naturaleza superpuesta."
+    
+    scene white
+    call screen Oráculo
+
+label parte3:
+    scene bg 3s
+
+    show quanta determinado at left
+    "Quanta" "Entonces, ¿Cómo reforzamos la señal del Oráculo?"
+
+    hide quanta determinado at left
+    show qbit base at right
+    "Q_Bit" "Esa es la función del Difusor, Quanta. Actúa como un amplificador para nuestras probabilidades. Si este fuera un escenario clásico, mmmmm, yo diría es un encuentra-y-destaca."
+
+    hide qbit base at right
+    show quanta base at left
+    "Quanta" "Lo comprendo, déjame selecionar el Difusor ahora."
+
+    scene white
+    call screen Difusor
+
+label parte4:
+    scene bg 4s
+
+    show quanta base at left
+    "Quanta" "¿Podemos estar seguros qué ese es el camino correcto entre los 16, Q_Bit?"
+
+    hide quanta base at left
+    show qbit base at right
+    "Q_Bit" "Vamos a necesitar iterar el proceso que acabamos de hacer, para amplificar la señal del camino correcto. La cantidad de iteraciones depende del número total de caminos."
+
+    hide qbit base at right
+    show quanta determinado at left
+    "Quanta" "¿Cómo determinamos el número de iteraciones?"
+
+label parte4b:
+    hide quanta determinado at left
+    show qbit base at right
+    "Q_Bit" "En general, la raíz cuadrada del número total de caminos nos dará un buen punto de partida. Con cuatro caminos, serían dos iteraciones. Con ocho caminos, serían tres. Y con dieciséis caminos..."
+
+    scene white
+    show seleccion at truecenter
+    "Q_Bit" "¿Cuántas iteraciones de este proceso necesitamos si tenemos 16 posibles caminos?"
+    
+    menu:
+        "Cuatro":
+            hide seleccion
+            hide qbit base at right
+            jump end
+
+        "Cinco":
+            "Q_Bit" "Mmm, no es necesario tantas repeticiones Quanta, voy a repetitir lo que sé."
+            jump parte4b
+
+        "Tres":
+            "Q_Bit" "Eso sería para el caso de 8 caminos Quanta."
+            jump parte4b
+
+label end:
+
+    scene bg final
+    show quanta determinado at left
+    "Quanta" "Necesitaremos alrededor de cuatro, si seguimos esa lógica. ¿Correcto?"
+
+    hide quanta determinado at left
+    show qbit base at right
+    "Q_Bit" "¡Exactamente! Cada iteración del proceso mejorará nuestras probabilidades. Así que, en este caso, repetiremos el proceso cuatro veces."
+
+    show qbit preparado at right
+    "Q_Bit" "Excelente trabajo, Quanta. Has amplificado la señal del camino correcto con éxito."
+
+    stop music fadeout 2.0
+    play music "HEROICCC(chosic.com).mp3"
+
+    hide qbit preparado at right
+    show qbit preparado at left
+    show quanta base at truecenter
+    "Quanta" "Parece que el algoritmo de Grover ahora indica claramente el camino a seguir. Adelante, hacia el profesor."
+
+    call script3_start
+
+    return

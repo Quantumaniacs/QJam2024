@@ -1,0 +1,74 @@
+﻿# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define Quanta = Character("Quanta", color="#29C101")
+define Q_Bit = Character("Q_Bit", color="#0138C1")
+
+image determinado:
+    'quanta determinado.png'
+
+image bravo:
+    'quanta bravo.png'
+
+# The game starts here.
+
+label start:
+
+    play music "audio/PAX__Una_Aventura_Espacial.mp3" noloop fadein 0.5
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+    
+    scene black with fade
+
+    """En un rincón escondido del multiverso, donde la realidad se entrelaza con lo
+imposible, se encuentra el laboratorio del Profesor Planck..."""
+
+    scene nivel 1:
+        zoom 1.1
+    
+
+    show qbit base at Position(xpos=0.95, ypos=0.4) with moveinright
+
+    Q_Bit "¡Justo a tiempo Quanta! Tenemos una misión crucial hoy"
+
+    show quanta base at left with moveinleft:
+        zoom 0.75
+
+    Quanta "Listo como siempre, Q-Bit. ¿Qué sucedió?"
+
+    Q_Bit """Decoherencia... otra vez. Ha secuestrado al profesor Planck y la clave de nuestra resistencia cuántica... un qubit excepcionalmente estable y cien porciento tolerante a los errores cuánticos."""
+    
+    show bravo at Position(xpos=-0.015, ypos=0.29):
+        zoom 1.375
+        
+
+    Q_Bit """¡Pero no temáis! Con mis algoritmos actualizados y tu valor, ¡podemos rastrearlo a través de superposiciones cuánticas!"""
+
+    Q_Bit """Quanta, ¿recuerdas el principio de superposición?"""
+
+    hide bravo
+    show determinado at Position(xpos=-0.015, ypos=0.28):
+        zoom 1.35
+
+    Quanta """Por supuesto, es lo que permite que un qubit esté en múltiples estados simultáneamente, a diferencia de un bit clásico."""
+
+    Q_Bit """Perfecto. Nuestro primer destino es la Ciudad de la Superposición. Y recuerda, en el mundo cuántico, las cosas no son tan binarias como parecen... {b}**(ba dumb tss)**{b}"""
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    # These display lines of dialogue.
+
+    stop music fadeout 1.0
+
+    scene black with fade
+
+    # This ends the game.
+    call script2_start
+
+    return

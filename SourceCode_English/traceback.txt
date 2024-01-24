@@ -1,0 +1,66 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script0k.rpy", line 72, in script call
+    call script001_start from _call_script001_start
+  File "game/script1k.rpy", line 56, in script call
+    call script002_start from _call_script002_start
+  File "game/script2k.rpy", line 279, in script call
+    call script003_start from _call_script003_start
+  File "game/script3k.rpy", line 91, in script call
+    call start1 from _call_start1
+  File "game/script.rpy", line 71, in script call
+    call script2_start from _call_script2_start
+  File "game/script_2.rpy", line 193, in script call
+    call script3_start from _call_script3_start
+  File "game/nivel3 script.rpy", line 49, in script call
+    call script4_start from _call_script4_start
+  File "game/nivel4 script.rpy", line 619, in script call
+    call start5M from _call_start5M
+  File "game/script5M.rpy", line 264, in script
+    call screen levelBonus_end
+  File "renpy/common/000statements.rpy", line 670, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+Exception: Screen levelBonus_end is not known.
+
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script0k.rpy", line 72, in script call
+    call script001_start from _call_script001_start
+  File "game/script1k.rpy", line 56, in script call
+    call script002_start from _call_script002_start
+  File "game/script2k.rpy", line 279, in script call
+    call script003_start from _call_script003_start
+  File "game/script3k.rpy", line 91, in script call
+    call start1 from _call_start1
+  File "game/script.rpy", line 71, in script call
+    call script2_start from _call_script2_start
+  File "game/script_2.rpy", line 193, in script call
+    call script3_start from _call_script3_start
+  File "game/nivel3 script.rpy", line 49, in script call
+    call script4_start from _call_script4_start
+  File "game/nivel4 script.rpy", line 619, in script call
+    call start5M from _call_start5M
+  File "game/script5M.rpy", line 264, in script
+    call screen levelBonus_end
+  File "C:\Users\dafda\Documents\Installers\renpy-8.1.3-sdk\renpy\ast.py", line 2259, in execute
+    self.call("execute")
+  File "C:\Users\dafda\Documents\Installers\renpy-8.1.3-sdk\renpy\ast.py", line 2241, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\dafda\Documents\Installers\renpy-8.1.3-sdk\renpy\statements.py", line 342, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 670, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\dafda\Documents\Installers\renpy-8.1.3-sdk\renpy\exports.py", line 3333, in call_screen
+    show_screen(_screen_name, _transient=True, *args, **kwargs)
+  File "C:\Users\dafda\Documents\Installers\renpy-8.1.3-sdk\renpy\display\screen.py", line 1220, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen levelBonus_end is not known.
+
+
+Windows-10-10.0.22621 AMD64
+Ren'Py 8.1.3.23091805
+{b}Quantum Quest The Adventure of Quanta{b} 1.0
+Tue Jan 16 15:07:06 2024
